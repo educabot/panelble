@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+<link rel="stylesheet" type="text/css" href="lib/css/slider.css">
+<link rel="stylesheet" type="text/css" href="material-1.4.0/css/base.min.css">
+<link rel="stylesheet" type="text/css" href="material-1.4.0/css/project.min.css">
+
+<title>Panel BLE</title>
+</head>
+<body id="bodyID" class="page-brand">
+<header class="header header-brand header-waterfall ui-header">
+		<ul class="nav nav-list pull-left">
+			<li>
+				<a data-toggle="menu" href="#ui_menu">
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo header-affix-hide margin-left-no margin-right-no" data-offset-top="213" data-spy="affix" href="index.html">Panel BLE</a>
+		<ul class="nav nav-list pull-right">
+			<li class="dropdown margin-right open">
+				<a id="connectionBtn" class="dropdown-toggle padding-left-no padding-right-no" data-toggle="dropdown" aria-expanded="true">
+					<span class="avatar avatar-sm"><img id="connectionItem" alt="BT" src="img/bt_off.png"></span>
+				</a>
+			</li>
+		</ul>
+	</header>
+	<nav aria-hidden="true" class="menu" id="ui_menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="index.html">Panel-BLE</a>
+				<ul class="nav">
+					<li>
+						<ul class="menu-collapse collapse in" id="ui_menu_components">
+							<li>
+								<a class="waves-attach" href="http://www.educabot.org/panelble">Ver Proyecto     </a>
+							</li>
+							<li>
+								<a id="exitBtnMainMenu" class="waves-attach" href="#">Salir</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2">
+					<section class="content-inner margin-top-no">
+					<br/><br/>
+						<ul id="pinCards" class="nav">
+					
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="ui-footer">
+		<div class="container">
+			<p>Panel BLE - Educabot</p>
+		</div>
+	</footer>
+	<div class="fbtn-container">   <!-- Menu Pines-->
+		<div class="fbtn-inner">
+			<a class="fbtn fbtn-lg fbtn-brand-accent waves-attach waves-circle waves-light" data-toggle="modal" href="#createPinMenu" id="createPinMenuBtn"><span class="fbtn-ori icon">add circle</span></a>
+		</div>
+	</div>
+
+	<!-- Menu Coneccion-->
+	<div id="connectionMenu" aria-hidden="true" class="modal modal-va-middle fade" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="modal-heading">
+					<h2 class="modal-title">Seleccione un Dispositivo:</h2>
+				</div>
+				<div class="modal-inner">
+					<ul id="deviceList" class="nav">
+						<li>
+	
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cerrar</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<!-- Menu DesConeccion-->
+	<div id="desConnectionMenu" aria-hidden="true" class="modal modal-va-middle fade" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="modal-heading">
+					<h2 class="modal-title">¡Atencion!</h2>
+				</div>
+				<div class="modal-inner">
+					<p class="h5 margin-top-sm text-black-hint" >¿Estás seguro que deseas desconectar el dispositivo?</p>
+				</div>
+				<div class="modal-footer">
+					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancelar</a><a id="disconnect" class="btn btn-flat btn-brand-accent waves-attach" >Desconectar</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Menu Exit-->
+	<div id="exitAppMenu" aria-hidden="true" class="modal modal-va-middle fade" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="modal-heading">
+					<h2 class="modal-title">¡Atencion!</h2>
+				</div>
+				<div class="modal-inner">
+					<p class="h5 margin-top-sm text-black-hint" >¿Estás seguro que deseas salir de la aplicación?</p>
+				</div>
+				<div class="modal-footer">
+					<p class="text-right"><a class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Cancelar</a><a id="exitBtn" class="btn btn-flat btn-brand-accent waves-attach" >Salir</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Menu Create Pins-->
+	<div id="createPinMenu" aria-hidden="true" class="modal fade in" role="dialog" tabindex="-1">
+		<div class="modal-dialog modal-xs">
+			<div class="modal-content">
+				<div class="modal-heading">
+					<h3 id="createPinHeading" class="modal-title">Seleccione tipo de Pin:</h3>
+				</div>
+				<div class="modal-inner">
+					<ul id="createPinContent" class="nav" >
+			
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<p class="text-right">  <a class="btn btn-flat btn-brand-accent waves-attach" id="cancelBtn" data-dismiss="modal">Cancelar</a> <a id="nextBtn" class="btn btn-flat btn-brand-accent waves-attach" >Siguiente</a><a id="createPinBtn" class="btn btn-flat btn-brand-accent waves-attach" data-dismiss="modal">Crear</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+	<script type="text/javascript" src="material-1.4.0/js/base.min.js"></script>
+	<script type="text/javascript" src="material-1.4.0/js/project.min.js"></script>
+</body>
+</html>
